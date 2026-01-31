@@ -11,3 +11,14 @@ This is the content for the demo file.
 
 1. Yes?
 2. No?
+
+```js
+import { createFileRoute } from '@tanstack/react-router'
+
+export const Route = createFileRoute('/blogs/$slug')({
+  component: RouteComponent,
+  loader: async ({ params }) => {
+    return fetchBlog(params.slug)
+  },
+})
+```
